@@ -104,21 +104,18 @@ const Printable = () => {
       </div>
 
       <Dialog open={previewOpen} onOpenChange={setPreviewOpen}>
-        <DialogContent className="max-w-[90vw] w-[1200px] max-h-[90vh] bg-gradient-to-br from-white to-[#fafafa] p-8 rounded-3xl shadow-xl border border-gray-100">
-          <DialogHeader className="space-y-3">
-            <DialogTitle className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#2D3250] to-[#7077A1]">
-              Prévia do PDF
-            </DialogTitle>
-            <DialogDescription className="text-lg text-[#7077A1]">
+        <DialogContent className="max-w-[90vw] max-h-[90vh] overflow-y-auto bg-white p-8 rounded-4xl shadow-soft">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-semibold text-[#2D3250]">Prévia do PDF</DialogTitle>
+            <DialogDescription className="text-[#7077A1]">
               Verifique como seu PDF ficará antes de fazer o download
             </DialogDescription>
           </DialogHeader>
 
-          <div className="mt-6 border rounded-2xl p-8 bg-white shadow-inner relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-50/50 to-transparent pointer-events-none" />
+          <div className="border rounded-4xl p-8 bg-white shadow-inner">
             <div className="transform scale-[0.7] origin-top-left">
               <div id="preview-content" className="w-[21cm] mx-auto">
-                <div className="h-[29.7cm] bg-white shadow-lg flex flex-col p-[1cm] rounded-2xl">
+                <div className="h-[29.7cm] bg-white shadow-soft flex flex-col p-[1cm] rounded-3xl">
                   <Header />
                   <div className="flex-grow space-y-8">
                     <Education />
@@ -130,7 +127,7 @@ const Printable = () => {
             </div>
           </div>
 
-          <DialogFooter className="mt-8 flex justify-between items-center border-t pt-6">
+          <DialogFooter className="sm:justify-between mt-8">
             <Button
               variant="outline"
               onClick={() => setPreviewOpen(false)}
@@ -140,10 +137,10 @@ const Printable = () => {
             </Button>
             <Button
               onClick={generatePDF}
-              className="flex items-center gap-2 bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] hover:from-[#8B5CF6] hover:to-[#7C3AED] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="flex items-center gap-2 bg-[#9b87f5] hover:bg-[#8B5CF6] transition-all duration-300 shadow-soft hover:shadow-lg"
             >
               <FileDown className="w-4 h-4" />
-              Gerar PDF
+              Baixar PDF
             </Button>
           </DialogFooter>
         </DialogContent>
