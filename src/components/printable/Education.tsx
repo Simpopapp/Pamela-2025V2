@@ -1,7 +1,10 @@
+import { Separator } from "@/components/ui/separator";
+
 export const Education = () => {
   return (
     <section className="mb-8">
       <h2 className="text-2xl font-bold text-primary mb-6">Formação Acadêmica</h2>
+      <Separator className="mb-6 bg-[#403E43] h-[0.5px] opacity-30" />
       
       <div className="space-y-6">
         <div className="border-l-4 border-accent pl-4">

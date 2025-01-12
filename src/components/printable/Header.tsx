@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export const Header = () => {
   return (
@@ -10,21 +11,22 @@ export const Header = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5" />
+              <MapPin className="w-5 h-5 text-accent" />
               <p>R. Dona tecla 866. Jardim flor da montanha. Apto 134B</p>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5 text-accent" />
               <p>(11) 992728063</p>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5 text-accent" />
               <p>Az746516@gmail.com</p>
             </div>
           </div>
           
           <div className="space-y-2">
             <h3 className="text-xl font-semibold">Objetivos</h3>
+            <Separator className="my-2 bg-[#403E43] h-[0.5px] opacity-30" />
             <p>Auxiliar / Jovem Aprendiz</p>
           </div>
         </div>
