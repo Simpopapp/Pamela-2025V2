@@ -11,21 +11,74 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
+    
+    /* Enhanced color system */
+    --color-primary: 221 83% 53%;
+    --color-secondary: 215 20% 65%;
+    --color-accent: 262 83% 58%;
+    --color-success: 142 71% 45%;
+    --color-warning: 38 92% 50%;
+    --color-error: 0 84% 60%;
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold;
+    @apply font-sans font-semibold tracking-tight;
   }
+
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl leading-tight; }
+  h2 { @apply text-3xl md:text-4xl lg:text-5xl leading-tight; }
+  h3 { @apply text-2xl md:text-3xl lg:text-4xl leading-tight; }
+  h4 { @apply text-xl md:text-2xl lg:text-3xl leading-tight; }
+  h5 { @apply text-lg md:text-xl lg:text-2xl leading-tight; }
+  h6 { @apply text-base md:text-lg lg:text-xl leading-tight; }
 }
 
+/* Enhanced animations */
 .section-fade {
   @apply animate-fade-in;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #2D3250 0%, #424769 100%);
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, rgb(45, 50, 80) 0%, rgb(66, 71, 105) 100%);
+}
+
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Micro-interactions */
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary;
 }
