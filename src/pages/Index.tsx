@@ -54,25 +54,32 @@ const Index = React.memo(() => {
         <div className="grid gap-8 animate-fade-in relative">
           <div className="transform hover:scale-[1.01] transition-transform duration-300">
             <Header />
-            <div className="flex justify-center mt-4">
-              <div className="w-0.5 h-8 bg-gradient-to-b from-accent/40 to-transparent rounded-full animate-pulse"></div>
+            <div className="flex justify-center mt-6">
+              <div className="relative w-0.5 h-12">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/30 via-accent/20 to-transparent rounded-full animate-pulse"></div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent/20 rounded-full"></div>
+              </div>
             </div>
           </div>
           <div className="space-y-8 relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/10 via-accent/5 to-transparent rounded-full"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent/15 via-accent/10 to-transparent rounded-full opacity-70"></div>
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Education />
-              <div className="flex justify-center mt-4">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/10 to-transparent flex items-center justify-center">
-                  <div className="w-1 h-4 bg-accent/20 rounded-full"></div>
+              <div className="flex justify-center mt-6">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/15 to-transparent p-0.5">
+                  <div className="w-full h-full rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-1 h-5 bg-accent/30 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Experience />
-              <div className="flex justify-center mt-4">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/10 to-transparent flex items-center justify-center">
-                  <div className="w-1 h-4 bg-accent/20 rounded-full"></div>
+              <div className="flex justify-center mt-6">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/15 to-transparent p-0.5">
+                  <div className="w-full h-full rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-1 h-5 bg-accent/30 rounded-full animate-pulse"></div>
+                  </div>
                 </div>
               </div>
             </div>
