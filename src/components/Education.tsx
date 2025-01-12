@@ -33,27 +33,27 @@ export const Education = React.memo<EducationProps>(() => {
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
       variants={container}
-      className="section-fade p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="section-fade p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
     >
-      <h2 className="text-2xl font-bold text-primary mb-6">Formação Acadêmica</h2>
+      <h2 className="text-2xl font-bold text-[#1A1F2C] mb-6">Formação Acadêmica</h2>
       
       <div className="space-y-6">
         <motion.div 
           variants={item}
-          className="border-l-4 border-accent pl-4 hover:border-highlight transition-colors duration-300"
+          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-4 rounded-lg"
         >
-          <h3 className="text-xl font-semibold">Biomedicina</h3>
-          <p className="text-secondary">Universidade UNG – Guarulhos</p>
-          <p className="text-sm text-gray-600">7º semestre - Cursando</p>
+          <h3 className="text-xl font-semibold text-gray-800">Biomedicina</h3>
+          <p className="text-gray-600">Universidade UNG – Guarulhos</p>
+          <p className="text-sm text-gray-500">7º semestre - Cursando</p>
         </motion.div>
 
         <motion.div 
           variants={item}
-          className="border-l-4 border-accent pl-4 hover:border-highlight transition-colors duration-300"
+          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-4 rounded-lg"
         >
-          <h3 className="text-xl font-semibold">Ensino Médio</h3>
-          <p className="text-secondary">E. E. Prof Frederico de Barros Brotero</p>
-          <p className="text-sm text-gray-600">Completo</p>
+          <h3 className="text-xl font-semibold text-gray-800">Ensino Médio</h3>
+          <p className="text-gray-600">E. E. Prof Frederico de Barros Brotero</p>
+          <p className="text-sm text-gray-500">Completo</p>
         </motion.div>
       </div>
     </motion.section>

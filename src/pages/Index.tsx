@@ -21,12 +21,12 @@ const Index = React.memo(() => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
       <div className="max-w-4xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-6">
           <Button 
             onClick={handlePrintClick}
-            className="flex items-center gap-2 bg-primary hover:bg-primary/90"
+            className="flex items-center gap-2 bg-[#8B5CF6] hover:bg-[#7C3AED] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             <FileText className="w-4 h-4" />
             Versão PDF
