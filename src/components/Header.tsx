@@ -1,8 +1,9 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, FileText, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { toast } from "./ui/use-toast";
 
 interface HeaderProps {}
 
@@ -18,6 +19,25 @@ export const Header = React.memo<HeaderProps>(() => {
         duration: 0.6,
         ease: "easeOut"
       }
+    }
+  };
+
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: 'Currículo - Pamela Leticia',
+          url: window.location.href
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: "Link copiado!",
+          description: "O link do currículo foi copiado para sua área de transferência."
+        });
+      }
+    } catch (error) {
+      console.error('Erro ao compartilhar:', error);
     }
   };
 
@@ -83,13 +103,32 @@ export const Header = React.memo<HeaderProps>(() => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Objetivos</h3>
             <p className="mb-4">Auxiliar / Jovem Aprendiz</p>
-            <Button 
-              variant="outline" 
-              className="bg-white/10 hover:bg-white/20 text-white border-white/20"
-              onClick={() => navigate('/print')}
-            >
-              Versão para Impressão
-            </Button>
+            <div className="flex flex-wrap gap-2">
+              <Button 
+                variant="outline" 
+                className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+                onClick={() => navigate('/print')}
+              >
+                <FileText className="mr-2 h-4 w-4" />
+                Versão para Impressão
+              </Button>
+              <Button 
+                variant="outline" 
+                className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+                onClick={() => window.open('/print', '_blank')}
+              >
+                <FileText className="mr-2 h-4 w-4" />
+                Versão PDF
+              </Button>
+              <Button 
+                variant="outline" 
+                className="bg-white/10 hover:bg-white/20 text-white border-white/20"
+                onClick={handleShare}
+              >
+                <Share2 className="mr-2 h-4 w-4" />
+                Compartilhar
+              </Button>
+            </div>
           </div>
         </div>
       </div>
