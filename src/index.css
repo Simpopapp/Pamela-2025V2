@@ -37,6 +37,28 @@
   h6 { @apply text-base md:text-lg lg:text-xl leading-tight; }
 }
 
+/* Print styles */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-break-before {
+    break-before: page;
+  }
+
+  .print-break-after {
+    break-after: page;
+  }
+}
+
 /* Enhanced animations */
 .section-fade {
   @apply animate-fade-in;
