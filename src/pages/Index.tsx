@@ -26,7 +26,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-4xl mx-auto space-y-8 px-4 py-12 animate-fade-in">
+      <div className="max-w-4xl mx-auto space-y-8 px-4 py-12">
         <div className="flex justify-end">
           <Link to="/print">
             <Button variant="outline" size="sm" className="gap-2">
