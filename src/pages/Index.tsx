@@ -6,13 +6,25 @@ import React from "react";
 
 const Index = React.memo(() => {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#1A1F2C] via-[#2D3250] to-[#1A1F2C]">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-[800px] h-[1px] bg-white rotate-45"></div>
-        <div className="absolute top-40 right-20 w-[600px] h-[1px] bg-white -rotate-45"></div>
-        <div className="absolute bottom-40 left-0 w-[400px] h-[1px] bg-white rotate-12"></div>
-        <div className="absolute top-1/2 right-0 w-[300px] h-[1px] bg-white -rotate-12"></div>
+    <div className="min-h-screen relative">
+      {/* Original background for the top section */}
+      <div className="absolute top-0 left-0 right-0 h-[400px] bg-gradient-to-br from-[#1A1F2C] via-[#2D3250] to-[#1A1F2C]">
+        {/* Background decorative elements for top section */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-[400px] h-[1px] bg-white rotate-45"></div>
+          <div className="absolute top-20 right-10 w-[300px] h-[1px] bg-white -rotate-45"></div>
+        </div>
+      </div>
+
+      {/* Current background with lines for the rest of the page */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1A1F2C] via-[#2D3250] to-[#1A1F2C] z-[-1]">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-[800px] h-[1px] bg-white rotate-45"></div>
+          <div className="absolute top-40 right-20 w-[600px] h-[1px] bg-white -rotate-45"></div>
+          <div className="absolute bottom-40 left-0 w-[400px] h-[1px] bg-white rotate-12"></div>
+          <div className="absolute top-1/2 right-0 w-[300px] h-[1px] bg-white -rotate-12"></div>
+        </div>
       </div>
 
       <div className="relative py-6">
