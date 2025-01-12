@@ -21,14 +21,9 @@ const Index = React.memo(() => {
   };
 
   const handleShare = () => {
-    // Use the production URL instead of current window location
-    const webUrl = "https://digital-curriculum-mosaic-12.lovable.app/"; // Replace with your actual production URL
-    
-    // Create WhatsApp share message with the website link
+    const webUrl = "https://digital-curriculum-mosaic-12.lovable.app/";
     const message = `Confira meu currículo online: ${webUrl}\n\nBaixe também a versão PDF na página.`;
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
-
-    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
 
     toast({
@@ -56,16 +51,30 @@ const Index = React.memo(() => {
             Versão PDF
           </Button>
         </div>
-        <div className="grid gap-8 animate-fade-in">
+        <div className="grid gap-8 animate-fade-in relative">
           <div className="transform hover:scale-[1.01] transition-transform duration-300">
             <Header />
+            <div className="flex justify-center mt-4">
+              <div className="w-0.5 h-8 bg-gradient-to-b from-accent/40 to-transparent rounded-full animate-pulse"></div>
+            </div>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-8 relative">
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/10 via-accent/5 to-transparent rounded-full"></div>
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Education />
+              <div className="flex justify-center mt-4">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/10 to-transparent flex items-center justify-center">
+                  <div className="w-1 h-4 bg-accent/20 rounded-full"></div>
+                </div>
+              </div>
             </div>
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Experience />
+              <div className="flex justify-center mt-4">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/10 to-transparent flex items-center justify-center">
+                  <div className="w-1 h-4 bg-accent/20 rounded-full"></div>
+                </div>
+              </div>
             </div>
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Skills />
