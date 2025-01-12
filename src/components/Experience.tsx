@@ -1,26 +1,37 @@
 import { motion } from "framer-motion";
+import React from "react";
 
-export const Experience = () => {
+interface ExperienceProps {}
+
+export const Experience = React.memo<ExperienceProps>(() => {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.3
       }
     }
   };
 
   const item = {
     hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 }
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
     <motion.section 
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-100px" }}
       variants={container}
       className="section-fade p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
     >
@@ -51,4 +62,6 @@ export const Experience = () => {
       </div>
     </motion.section>
   );
-};
+});
+
+Experience.displayName = 'Experience';

@@ -2,28 +2,39 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
-export const Header = () => {
+interface HeaderProps {}
+
+export const Header = React.memo<HeaderProps>(() => {
   const navigate = useNavigate();
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
     <motion.header 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       className="section-fade gradient-bg text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       <div className="max-w-4xl mx-auto">
         <motion.h1 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
           className="text-4xl font-bold mb-4 hover:text-highlight transition-colors duration-300"
         >
           Pamela Leticia Alves Ferreira
         </motion.h1>
         <motion.h2 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
           className="text-2xl text-highlight mb-6"
         >
           Biomedicina • 7º semestre
@@ -69,4 +80,6 @@ export const Header = () => {
       </div>
     </motion.header>
   );
-};
+});
+
+Header.displayName = 'Header';
