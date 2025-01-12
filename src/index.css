@@ -29,3 +29,32 @@
 .gradient-bg {
   background: linear-gradient(135deg, #2D3250 0%, #424769 100%);
 }
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .fixed {
+    display: none !important;
+  }
+
+  #resume-content {
+    transform: none !important;
+  }
+
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  .space-y-\[2cm\] > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0 !important;
+  }
+}
