@@ -38,29 +38,39 @@ const Index = React.memo(() => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#F6F8FB] via-[#E5DEFF] to-[#F6F8FB] py-12">
       <div className="max-w-4xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end gap-4 mb-6">
           <Button 
             onClick={handleShare}
-            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] transition-all duration-300 shadow-soft hover:shadow-lg transform hover:-translate-y-0.5"
           >
             <Share2 className="w-4 h-4" />
             Compartilhar Currículo
           </Button>
           <Button 
             onClick={handlePrintClick}
-            className="flex items-center gap-2 bg-[#8B5CF6] hover:bg-[#7C3AED] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+            className="flex items-center gap-2 bg-[#9b87f5] hover:bg-[#8B5CF6] transition-all duration-300 shadow-soft hover:shadow-lg transform hover:-translate-y-0.5"
           >
             <FileText className="w-4 h-4" />
             Versão PDF
           </Button>
         </div>
-        <Header />
         <div className="grid gap-8 animate-fade-in">
-          <Education />
-          <Experience />
-          <Skills />
+          <div className="transform hover:scale-[1.01] transition-transform duration-300">
+            <Header />
+          </div>
+          <div className="space-y-8">
+            <div className="transform hover:scale-[1.01] transition-transform duration-300">
+              <Education />
+            </div>
+            <div className="transform hover:scale-[1.01] transition-transform duration-300">
+              <Experience />
+            </div>
+            <div className="transform hover:scale-[1.01] transition-transform duration-300">
+              <Skills />
+            </div>
+          </div>
         </div>
       </div>
     </div>
