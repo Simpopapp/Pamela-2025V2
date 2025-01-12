@@ -8,7 +8,7 @@ const Index = React.memo(() => {
   return (
     <div className="min-h-screen relative">
       {/* Original background for the top section */}
-      <div className="absolute top-0 left-0 right-0 h-[400px] bg-gradient-to-br from-[#1A1F2C] via-[#2D3250] to-[#1A1F2C]">
+      <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-br from-[#1A1F2C] via-[#2D3250] to-[#1A1F2C]">
         {/* Background decorative elements for top section */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-[400px] h-[1px] bg-white rotate-45"></div>
