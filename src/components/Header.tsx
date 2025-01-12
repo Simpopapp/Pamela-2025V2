@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { memo } from 'react';
 
-export const Header = () => {
+export const Header = memo(() => {
   return (
     <header className="section-fade gradient-bg text-white p-8 rounded-xl shadow-lg transform hover:scale-[1.01] transition-all duration-300 group">
       <div className="max-w-4xl mx-auto relative">
@@ -42,4 +43,6 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = 'Header';
