@@ -3,8 +3,9 @@ import { Education } from "@/components/printable/Education";
 import { Experience } from "@/components/printable/Experience";
 import { Skills } from "@/components/printable/Skills";
 import { Button } from "@/components/ui/button";
-import { FileDown, Eye } from "lucide-react";
+import { FileDown, Eye, ArrowLeft } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -18,10 +19,15 @@ import React, { useState } from "react";
 
 const Printable = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [previewOpen, setPreviewOpen] = useState(false);
 
   const handlePreview = () => {
     setPreviewOpen(true);
+  };
+
+  const handleBack = () => {
+    navigate('/');
   };
 
   const generatePDF = async () => {
@@ -65,7 +71,15 @@ const Printable = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <Button 
+          onClick={handleBack}
+          variant="outline"
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Voltar
+        </Button>
         <Button 
           onClick={handlePreview}
           className="flex items-center gap-2 bg-primary hover:bg-primary/90"
@@ -76,7 +90,6 @@ const Printable = () => {
       </div>
       
       <div id="pdf-content" className="max-w-[21cm] mx-auto space-y-8">
-        {/* First A4 Page */}
         <div className="h-[29.7cm] w-[21cm] mx-auto bg-white shadow-lg print:shadow-none flex flex-col p-[1cm] relative">
           <Header />
           <div className="flex-grow space-y-8">
@@ -84,7 +97,6 @@ const Printable = () => {
             <Experience />
             <Skills />
           </div>
-          {/* Visual page break indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-8 bg-gray-100 -mb-8 flex items-center justify-center text-sm text-gray-500 print:hidden">
             Fim da página 1
           </div>

@@ -3,7 +3,7 @@ import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Skills } from "@/components/Skills";
 import { Button } from "@/components/ui/button";
-import { FileDown } from "lucide-react";
+import { FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 import React from "react";
@@ -28,8 +28,8 @@ const Index = React.memo(() => {
             onClick={handlePrintClick}
             className="flex items-center gap-2 bg-primary hover:bg-primary/90"
           >
-            <FileDown className="w-4 h-4" />
-            Gerar PDF
+            <FileText className="w-4 h-4" />
+            Versão PDF
           </Button>
         </div>
         <Header />
