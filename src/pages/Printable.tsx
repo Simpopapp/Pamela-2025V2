@@ -64,7 +64,7 @@ const Printable = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-100 py-8">
       <div className="fixed top-4 right-4 z-50">
         <Button 
           onClick={handlePreview}
@@ -75,19 +75,19 @@ const Printable = () => {
         </Button>
       </div>
       
-      <div id="pdf-content" className="max-w-[21cm] mx-auto space-y-[1cm] p-8 print:p-[1cm]">
+      <div id="pdf-content" className="max-w-[21cm] mx-auto space-y-8">
         {/* First A4 Page */}
-        <div className="h-[29.7cm] w-[21cm] mx-auto bg-white print:shadow-none flex flex-col">
+        <div className="h-[29.7cm] w-[21cm] mx-auto bg-white shadow-lg print:shadow-none flex flex-col p-[1cm] relative">
           <Header />
-          <div className="flex-grow space-y-8 print:space-y-6">
+          <div className="flex-grow space-y-8">
             <Education />
             <Experience />
+            <Skills />
           </div>
-        </div>
-        
-        {/* Second A4 Page */}
-        <div className="h-[29.7cm] w-[21cm] mx-auto bg-white print:shadow-none flex flex-col print:break-before-page">
-          <Skills />
+          {/* Visual page break indicator */}
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gray-100 -mb-8 flex items-center justify-center text-sm text-gray-500 print:hidden">
+            Fim da página 1
+          </div>
         </div>
       </div>
 
@@ -102,17 +102,14 @@ const Printable = () => {
 
           <div className="border rounded-lg p-4 bg-white">
             <div className="transform scale-[0.7] origin-top-left">
-              <div id="preview-content" className="w-[21cm] mx-auto space-y-[1cm]">
+              <div id="preview-content" className="w-[21cm] mx-auto">
                 <div className="h-[29.7cm] bg-white shadow-lg flex flex-col p-[1cm]">
                   <Header />
                   <div className="flex-grow space-y-8">
                     <Education />
                     <Experience />
+                    <Skills />
                   </div>
-                </div>
-                
-                <div className="h-[29.7cm] bg-white shadow-lg flex flex-col p-[1cm]">
-                  <Skills />
                 </div>
               </div>
             </div>
