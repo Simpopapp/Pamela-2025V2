@@ -21,8 +21,8 @@ const Index = React.memo(() => {
   };
 
   const handleShare = () => {
-    // Get the current website URL
-    const webUrl = window.location.origin;
+    // Use the production URL instead of current window location
+    const webUrl = "https://seu-curriculo.lovable.dev"; // Replace with your actual production URL
     
     // Create WhatsApp share message with the website link
     const message = `Confira meu currículo online: ${webUrl}\n\nBaixe também a versão PDF na página.`;
