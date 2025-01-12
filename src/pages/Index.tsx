@@ -12,22 +12,22 @@ const Index = React.memo(() => {
           <div className="transform hover:scale-[1.01] transition-transform duration-300">
             <Header />
             <div className="flex justify-center mt-6">
-              <div className="relative w-[1px] h-16">
-                <div className="absolute inset-0 bg-gradient-to-b from-highlight/20 to-transparent"></div>
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-highlight/30 rounded-full"></div>
+              <div className="relative w-[2px] h-20">
+                <div className="absolute inset-0 bg-gradient-to-b from-highlight/30 to-transparent"></div>
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-highlight/40 rotate-45"></div>
               </div>
             </div>
           </div>
           
           <div className="space-y-8 relative">
-            <div className="absolute left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-highlight/10 via-highlight/5 to-transparent"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-highlight/20 via-highlight/10 to-transparent"></div>
             
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Education />
               <div className="flex justify-center mt-6">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-highlight/10 to-transparent/5 p-0.5 backdrop-blur-sm">
-                  <div className="w-full h-full rounded-full flex items-center justify-center">
-                    <div className="w-[1px] h-4 bg-highlight/20"></div>
+                <div className="w-6 h-6 bg-gradient-to-br from-highlight/20 to-transparent/10 rotate-45">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-[2px] h-4 bg-highlight/30"></div>
                   </div>
                 </div>
               </div>
@@ -36,9 +36,9 @@ const Index = React.memo(() => {
             <div className="transform hover:scale-[1.01] transition-transform duration-300">
               <Experience />
               <div className="flex justify-center mt-6">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-highlight/10 to-transparent/5 p-0.5 backdrop-blur-sm">
-                  <div className="w-full h-full rounded-full flex items-center justify-center">
-                    <div className="w-[1px] h-4 bg-highlight/20"></div>
+                <div className="w-6 h-6 bg-gradient-to-br from-highlight/20 to-transparent/10 rotate-45">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-[2px] h-4 bg-highlight/30"></div>
                   </div>
                 </div>
               </div>
