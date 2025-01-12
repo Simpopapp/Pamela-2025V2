@@ -5,8 +5,19 @@ export const Header = () => {
   return (
     <header className="text-primary print:text-black mb-6">
       <div className="max-w-4xl space-y-4">
-        <h1 className="text-3xl font-bold mb-2 print:text-4xl">Pamela Leticia Alves Ferreira</h1>
-        <h2 className="text-xl text-accent print:text-2xl print:text-gray-700">Biomedicina • 7º semestre</h2>
+        <div className="flex items-center gap-6 mb-4">
+          <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-200 print:border-gray-300">
+            <img 
+              src="/lovable-uploads/7418b843-f242-421c-ace3-01ea1f544e94.png" 
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold mb-2 print:text-4xl">Pamela Leticia Alves Ferreira</h1>
+            <h2 className="text-xl text-accent print:text-2xl print:text-gray-700">Biomedicina • 7º semestre</h2>
+          </div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 print:gap-4">
           <div className="space-y-2 print:text-sm">
