@@ -13,6 +13,7 @@ export const ShareButtons = () => {
   const navigate = useNavigate();
 
   const handleShare = async () => {
+    // Get the current domain without any path
     const curriculoOnlineUrl = window.location.origin;
     console.log("Sharing URL:", curriculoOnlineUrl); // Debug log
     
