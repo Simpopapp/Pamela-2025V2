@@ -13,7 +13,9 @@ export const ShareButtons = () => {
   const navigate = useNavigate();
 
   const handleShare = async () => {
-    const curriculoOnlineUrl = window.location.href;
+    const curriculoOnlineUrl = window.location.origin;
+    console.log("Sharing URL:", curriculoOnlineUrl); // Debug log
+    
     const whatsappMessage = encodeURIComponent(
       `Olá! Gostaria de compartilhar meu currículo:\n\n` +
       `📱 Versão Online: ${curriculoOnlineUrl}\n` +
