@@ -13,14 +13,15 @@ export const ShareButtons = () => {
   const navigate = useNavigate();
 
   const handleShare = async () => {
-    // Get the current domain without any path
-    const curriculoOnlineUrl = window.location.origin;
-    console.log("Sharing URL:", curriculoOnlineUrl); // Debug log
+    // Define a URL base fixa para produção
+    const baseUrl = "https://digital-curriculum-mosaic-49.lovable.app";
+    
+    console.log("Sharing URL:", baseUrl); // Debug log
     
     const whatsappMessage = encodeURIComponent(
       `Olá! Gostaria de compartilhar meu currículo:\n\n` +
-      `📱 Versão Online: ${curriculoOnlineUrl}\n` +
-      `📄 Versão PDF: ${curriculoOnlineUrl}/print`
+      `📱 Versão Online: ${baseUrl}\n` +
+      `📄 Versão PDF: ${baseUrl}/print`
     );
     const whatsappUrl = `https://wa.me/?text=${whatsappMessage}`;
     window.open(whatsappUrl, '_blank');
