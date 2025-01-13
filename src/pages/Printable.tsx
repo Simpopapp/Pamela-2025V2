@@ -37,16 +37,7 @@ const Printable = () => {
   };
 
   const generatePDF = async () => {
-    // Clone the content to avoid modifying the visible DOM
     const element = document.getElementById('pdf-content');
-    if (!element) return;
-    
-    const clonedElement = element.cloneNode(true) as HTMLElement;
-    document.body.appendChild(clonedElement);
-    clonedElement.style.position = 'absolute';
-    clonedElement.style.left = '-9999px';
-    clonedElement.style.width = '21cm';
-    
     const opt = {
       margin: [10, 10],
       filename: 'curriculo.pdf',
@@ -54,12 +45,12 @@ const Printable = () => {
       html2canvas: { 
         scale: 2,
         useCORS: true,
-        letterRendering: true,
+        letterRendering: true
       },
       jsPDF: { 
         unit: 'mm', 
         format: 'a4', 
-        orientation: 'portrait'
+        orientation: 'portrait' 
       }
     };
 
@@ -69,15 +60,13 @@ const Printable = () => {
     });
 
     try {
-      await html2pdf().set(opt).from(clonedElement).save();
-      document.body.removeChild(clonedElement);
+      await html2pdf().set(opt).from(element).save();
       setPreviewOpen(false);
       toast({
         title: "PDF Gerado",
         description: "Seu PDF foi gerado com sucesso!"
       });
     } catch (error) {
-      document.body.removeChild(clonedElement);
       toast({
         title: "Erro",
         description: "Houve um erro ao gerar o PDF. Tente novamente.",
