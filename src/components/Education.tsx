@@ -33,27 +33,27 @@ export const Education = React.memo<EducationProps>(() => {
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
       variants={container}
-      className="section-fade p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+      className="section-fade p-4 sm:p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
     >
-      <h2 className="text-2xl font-bold text-[#1A1F2C] mb-6">Formação Acadêmica</h2>
+      <h2 className="text-xl sm:text-2xl font-bold text-[#1A1F2C] mb-4 sm:mb-6">Formação Acadêmica</h2>
       
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         <motion.div 
           variants={item}
-          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-4 rounded-lg"
+          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-3 sm:p-4 rounded-lg"
         >
-          <h3 className="text-xl font-semibold text-gray-800">Biomedicina</h3>
-          <p className="text-gray-600">Universidade UNG – Guarulhos</p>
-          <p className="text-sm text-gray-500">7º semestre - Cursando</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Biomedicina</h3>
+          <p className="text-sm sm:text-base text-gray-600">Universidade UNG – Guarulhos</p>
+          <p className="text-xs sm:text-sm text-gray-500">7º semestre - Cursando</p>
         </motion.div>
 
         <motion.div 
           variants={item}
-          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-4 rounded-lg"
+          className="border-l-4 border-[#8B5CF6] pl-4 hover:border-[#7C3AED] transition-colors duration-300 bg-gray-50 p-3 sm:p-4 rounded-lg"
         >
-          <h3 className="text-xl font-semibold text-gray-800">Ensino Médio</h3>
-          <p className="text-gray-600">E. E. Prof Frederico de Barros Brotero</p>
-          <p className="text-sm text-gray-500">Completo</p>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800">Ensino Médio</h3>
+          <p className="text-sm sm:text-base text-gray-600">E. E. Prof Frederico de Barros Brotero</p>
+          <p className="text-xs sm:text-sm text-gray-500">Completo</p>
         </motion.div>
       </div>
     </motion.section>
