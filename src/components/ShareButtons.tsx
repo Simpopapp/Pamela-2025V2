@@ -55,7 +55,7 @@ export const ShareButtons = () => {
       <Button 
         variant="outline" 
         className="bg-white/10 hover:bg-white/20 text-white border-white/20"
-        onClick={() => window.open('/print', '_blank')}
+        onClick={() => navigate('/print')}
       >
         <FileText className="mr-2 h-4 w-4" />
         Versão PDF
