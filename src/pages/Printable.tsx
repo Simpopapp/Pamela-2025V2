@@ -45,16 +45,12 @@ const Printable = () => {
       html2canvas: { 
         scale: 2,
         useCORS: true,
-        letterRendering: true,
-        scrollY: 0,
-        windowWidth: 1024,
+        letterRendering: true
       },
       jsPDF: { 
         unit: 'mm', 
         format: 'a4', 
-        orientation: 'portrait',
-        compress: true,
-        hotfixes: ["px_scaling"]
+        orientation: 'portrait' 
       }
     };
 
@@ -108,16 +104,18 @@ const Printable = () => {
         </Button>
       </div>
       
-      <div id="pdf-content" className="max-w-[21cm] mx-auto space-y-6 md:space-y-8 mt-16 md:mt-0">
+      <div id="pdf-content" className="max-w-[21cm] mx-auto space-y-4 md:space-y-6 mt-16 md:mt-0">
         <div className="min-h-[29.7cm] w-full md:w-[21cm] mx-auto bg-white shadow-soft hover:shadow-lg transition-all duration-300 print:shadow-none flex flex-col p-4 md:p-[1cm] relative rounded-2xl md:rounded-4xl">
-          <Header />
-          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <div className="space-y-6 md:space-y-8">
-              <Education />
-              <Experience />
-            </div>
-            <div>
-              <Skills />
+          <div className="space-y-4 print:space-y-4">
+            <Header />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:gap-4">
+              <div className="space-y-4 print:space-y-4">
+                <Education />
+                <Experience />
+              </div>
+              <div>
+                <Skills />
+              </div>
             </div>
           </div>
         </div>
@@ -136,14 +134,16 @@ const Printable = () => {
             <div className="transform scale-[0.6] md:scale-[0.7] origin-top-left">
               <div id="preview-content" className="w-full md:w-[21cm] mx-auto">
                 <div className="min-h-[29.7cm] bg-white shadow-soft flex flex-col p-[1cm] rounded-2xl md:rounded-3xl">
-                  <Header />
-                  <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <div className="space-y-6 md:space-y-8">
-                      <Education />
-                      <Experience />
-                    </div>
-                    <div>
-                      <Skills />
+                  <div className="space-y-4 print:space-y-4">
+                    <Header />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:gap-4">
+                      <div className="space-y-4 print:space-y-4">
+                        <Education />
+                        <Experience />
+                      </div>
+                      <div>
+                        <Skills />
+                      </div>
                     </div>
                   </div>
                 </div>
